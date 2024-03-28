@@ -31,24 +31,56 @@
 </body>
 
 <script>
-   document.getElementById("images").addEventListener('click', function(e) {
-console.log("clicked inside the ul");
+//    document.getElementById("images").addEventListener('click', function(e) {
+// console.log("clicked inside the ul");
 
-   }, true)
-   document.getElementById("owl").addEventListener('click', function(e) {
-    console.log("owl clicked");
-  e.stopPropagation ()
-   },false )
+//    }, true)
+//    document.getElementById("owl").addEventListener('click', function(e) {
+//     console.log("owl clicked");
+//   e.stopPropagation ()
+//    },false )
 
-document.getElementById("google").addEventListener
-('click', function(e) {
-e.preventDefault()
-e.stopPropagation()
-    console.log("google Clicked");
+// document.getElementById("google").addEventListener
+// ('click', function(e) {
+// e.preventDefault()
+// e.stopPropagation()
+//     console.log("google Clicked");
 
-}, false)
+// }, false)
+ document.querySelector('#images').addEventListener
+ ('click', function(e){
+    console.log(e.target.parentNode)
+    let removeIt = e.target.parentNode
+    removeIt.remove()
 
+    // Stricts checks
+
+
+    
+
+ }, false)
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
