@@ -69,7 +69,7 @@ promiseFour.then((user) => {
 
  })
 
- // promise is a object  
+ // promise is a object  new keyword are being used
 async function  consumePromiseFive(){
     const response = await promiseFive
     console.log(response);
