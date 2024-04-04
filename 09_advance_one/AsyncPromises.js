@@ -39,25 +39,25 @@
 
    // four
 
-const fourPromise = new Promise(function(resolve, reject){
+const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
-        if (!error) {
-            resolve({username: "SHivamHitesh", password:"1234"})
+        if(!error) {
+            resolve({username: "shivam", password: "1234"})
         } else {
-            reject('Error: something went Wrong')
+            reject('ERROR: Something went wrong')
         }
 
     },1000)
 })
-fourPromise.then((user) => {
-    console.log((user));
+promiseFour.then((user) => {
+    console.log(user);
     return user.username
-
-}).then((username)=> {
-    console.log(username);
-
-}).catch(function(error) {
-    console.log("error");
-
 })
+.then((username) => {
+    console.log(username)
+})
+.catch((error) => {
+    console.log(error);
+})
+.finally(()=> console.log(" The promise is either resolve or reject"))
