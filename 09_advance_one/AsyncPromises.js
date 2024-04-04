@@ -68,11 +68,11 @@ promiseFour.then((user) => {
     }, 1000)
 
  })
- 
 
 
 
-// async does wait for until working
+
+// async does wait for until working not handele the catch 
 //  async function  consumePromiseFive(){
 //     await promiseFive
 // }
