@@ -41,59 +41,19 @@ const promiseFour = new Promise(function(resolve, reject){
         if(!error) {
             resolve({username: "shivam", password: "1234"})
         } else {
-            reject('ERROR: Something went wrong')         }
-
-    },1000)})
-promiseFour.then((user) => {
-    console.log(user);     
-    return user.username })
- .then((username) => {
-     console.log(username) })
- .catch((error) => {
-     console.log(error);
- })
- .finally(()=> console.log(" The promise is either resolve or reject"))
-
-
-
- const promiseFive = new Promise(function(resolve, reject){
-     setTimeout(function(){
-         let  error = false
-        if( !error){
-             resolve({username:"javascript", password: " 12345"})
-
-         } else {
-            reject('Error: JS went wrong')
+            reject('Error: something went Wrong')
         }
-    }, 1000)
 
- })
+    },1000)
+})
+fourPromise.then((user) => {
+    console.log((user));
+    return user.username
 
- // promise is a object  new keyword are being used
-async function  consumePromiseFive(){
-    const response = await promiseFive
-    console.log(response);
-}
+}).then((username)=> {
+    console.log(username);
 
-consumePromiseFive()
+}).catch(function(error) {
+    console.log("error");
 
-
-// async does wait for until working not handele the catch 
-//  async function  consumePromiseFive(){
-//     await promiseFive
-// }
-
-
-
-
-
-
-// fetch('https://api.github.com/users/shivam7348')
-// .then((response) =>{
-//     return response.json()
-
-// })
-// .then((data) => {
-//     console.log(data);
-// })
-// .catch((error)=> console.log(error))
+})
