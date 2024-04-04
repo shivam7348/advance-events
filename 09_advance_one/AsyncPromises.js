@@ -58,7 +58,7 @@ promiseFour.then((user) => {
 
  const promiseFive = new Promise(function(resolve, reject){
      setTimeout(function(){
-         let  error = true
+         let  error = false
         if( !error){
              resolve({username:"javascript", password: " 12345"})
 
@@ -69,7 +69,13 @@ promiseFour.then((user) => {
 
  })
 
+ // promise is a object
+async function  consumePromiseFive(){
+    const response = await promiseFive
+    console.log(response);
+}
 
+consumePromiseFive()
 
 
 // async does wait for until working not handele the catch 
@@ -82,12 +88,12 @@ promiseFour.then((user) => {
 
 
 
-fetch('https://api.github.com/users/shivam7348')
-.then((response) =>{
-    return response.json()
+// fetch('https://api.github.com/users/shivam7348')
+// .then((response) =>{
+//     return response.json()
 
-})
-.then((data) => {
-    console.log(data);
-})
-.catch((error)=> console.log(error))
+// })
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch((error)=> console.log(error))
