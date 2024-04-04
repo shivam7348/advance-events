@@ -1,30 +1,63 @@
-const promiseOne = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        console.log('Async is complete');
-        resolve()
+// const promiseOne = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         console.log('Async is complete');
+//         resolve()
 
-    },1000)
-})
+//     },1000)
+// })
 
-promiseOne.then(function(){
-    console.log("Promise consumed");
 
-})
 
-// in next method it can also be like promise
-new Promise(function(resolve, reject){
-    setTimeout(function(){
-        console.log("Async task 2")
-        resolve()
-    },1000)
-}).then(function(){
-    console.log("Async 2 is resolved")
-})
+// promiseOne.then(function(){
+//     console.log("Promise consumed");
+
+// })
+
+// // in next method it can also be like promise
+// new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         console.log("Async task 2")
+//         resolve()
+//     },1000)
+// }).then(function(){
+//     console.log("Async 2 is resolved")
+// })
 
 // three 
-const promiseThree = new Promise(function(resolve, reject ){
-    setTimeout(function(){
+// const promiseThree = new Promise(function(resolve, reject ){
+//     setTimeout(function(){
+//         console.log("async code 3");
+//         resolve({usename: "chai", email: "chaifa-border.com"})
 
-        console.log("async code 3");
+//         },1000)
+// })
+
+// promiseThree.then(function(user){
+//     console.log(user)
+// })
+
+
+   // four
+
+const fourPromise = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if (!error) {
+            resolve({username: "SHivamHitesh", password:"1234"})
+        } else {
+            reject('Error: something went Wrong')
+        }
+
     },1000)
+})
+fourPromise.then((user) => {
+    console.log((user));
+    return user.username
+
+}).then((username)=> {
+    console.log(username);
+
+}).catch(function(error) {
+    console.log("error");
+
 })
