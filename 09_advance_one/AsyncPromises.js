@@ -69,7 +69,7 @@ promiseFour.then((user) => {
 
  })
 
- // promise is a object
+ // promise is a object  
 async function  consumePromiseFive(){
     const response = await promiseFive
     console.log(response);
