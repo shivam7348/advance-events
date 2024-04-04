@@ -35,25 +35,44 @@ promiseOne.then(function(){
 
    // four
 
-const promiseFour = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = true
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if(!error) {
+//             resolve({username: "shivam", password: "1234"})
+//         } else {
+//             reject('Error: something went Wrong')
+//         }
+
+//     },1000)
+// })
+// fourPromise.then((user) => {
+//     console.log((user));
+//     return user.username
+
+// }).then((username)=> {
+//     console.log(username);
+
+// }).catch(function(error) {
+//     console.log("error");
+
+// })
+
+const fivePromise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        let error = false
         if(!error) {
-            resolve({username: "shivam", password: "1234"})
-        } else {
-            reject('Error: something went Wrong')
+            resolve({username: "javascript", password:"1234"})
+        } else{
+            reject('ERROR: Js went wrong')
         }
 
+        
     },1000)
 })
-fourPromise.then((user) => {
-    console.log((user));
-    return user.username
+async function consumePromiseFive(){
+   const response =  await fivePromise()
+   console.log(response);
+}
 
-}).then((username)=> {
-    console.log(username);
-
-}).catch(function(error) {
-    console.log("error");
-
-})
+consumePromiseFive()
