@@ -10,7 +10,7 @@ const fivePromise = new Promise(function(resolve){
         }
     }, 1000)
 })
-
+// if error are in the code the it should be try catch()
 async function consumePromiseFive() {
      const response = await  fivePromise
      console.log(response);
