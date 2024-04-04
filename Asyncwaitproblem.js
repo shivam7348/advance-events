@@ -60,6 +60,11 @@ fetch('https://api.github.com/users/shivam7348')
 
 }).catch((error) => console.log(error));
 
+// fetch is exicting web request 
+
+
+
+
 
 
 
